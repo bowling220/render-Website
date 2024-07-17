@@ -8,7 +8,7 @@
 <body>
     <div id="content"></div>
     <script>
-        fetch('/scrape')
+        fetch('data.json')
             .then(response => response.json())
             .then(data => {
                 const contentDiv = document.getElementById('content');
