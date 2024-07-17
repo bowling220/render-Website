@@ -44,20 +44,10 @@
         .button:hover {
             background-color: #45a049;
         }
-        #pdfViewer {
+        #iframeContainer {
             width: 100%;
             height: 80vh;
             border: none;
-        }
-        #canvasContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            overflow: auto;
-        }
-        canvas {
-            border: 1px solid black;
         }
         @media (max-width: 600px) {
             .button {
@@ -66,65 +56,25 @@
             }
         }
     </style>
-    <script src="pdf.js"></script>
-    <script src="pdf.worker.js"></script>
 </head>
 <body>
     <header>
         <h1>Bowling Scores</h1>
     </header>
     <div id="navbar">
-        <button class="button" onclick="loadPdf('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Boys.pdf?v=new')">U18 Boys Day 1</button>
-        <button class="button" onclick="loadPdf('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Boys.pdf?v=new')">U18 Boys Day 2</button>
-        <button class="button" onclick="loadPdf('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Boys.pdf?v=new')">U18 Boys Day 3</button>
-        <button class="button" onclick="loadPdf('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Girls.pdf?v=new')">U18 Girls Day 1</button>
-        <button class="button" onclick="loadPdf('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Girls.pdf?v=new')">U18 Girls Day 2</button>
-        <button class="button" onclick="loadPdf('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Girls.pdf?v=new')">U18 Girls Day 3</button>
-        <button class="button" onclick="loadPdf('https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results')">All Rounds and Ages</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Boys.pdf?v=new')">U18 Boys Day 1</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Boys.pdf?v=new')">U18 Boys Day 2</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Boys.pdf?v=new')">U18 Boys Day 3</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Girls.pdf?v=new')">U18 Girls Day 1</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Girls.pdf?v=new')">U18 Girls Day 2</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Girls.pdf?v=new')">U18 Girls Day 3</button>
+        <button class="button" onclick="loadIframe('https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results')">All Rounds and Ages</button>
     </div>
-    <div id="canvasContainer">
-        <canvas id="pdfViewer"></canvas>
-    </div>
+    <iframe id="iframeContainer" src="https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results"></iframe>
 
     <script>
-        var pdfjsLib = window['pdfjs-dist/build/pdf'];
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdf.worker.js';
-
-        var pdfDoc = null,
-            pageNum = 1,
-            pageRendering = false,
-            pageNumPending = null,
-            scale = 1.5,
-            canvas = document.getElementById('pdfViewer'),
-            ctx = canvas.getContext('2d');
-
-        function renderPage(num) {
-            pageRendering = true;
-            pdfDoc.getPage(num).then(function(page) {
-                var viewport = page.getViewport({ scale: scale });
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-                var renderContext = {
-                    canvasContext: ctx,
-                    viewport: viewport
-                };
-                var renderTask = page.render(renderContext);
-                renderTask.promise.then(function() {
-                    pageRendering = false;
-                    if (pageNumPending !== null) {
-                        renderPage(pageNumPending);
-                        pageNumPending = null;
-                    }
-                });
-            });
-        }
-
-        function loadPdf(url) {
-            pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-                pdfDoc = pdfDoc_;
-                document.getElementById('page_count').textContent = pdfDoc.numPages;
-                renderPage(pageNum);
-            });
+        function loadIframe(url) {
+            document.getElementById('iframeContainer').src = url;
         }
     </script>
 </body>
