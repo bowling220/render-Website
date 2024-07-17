@@ -3,75 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>High-Tech Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Bowling Scores</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <section id="home">
-    <div class="hero">
-      <h1>Welcome to High-Tech Website</h1>
-      <p>Explore the future with us.</p>
-      <a href="#features" class="btn">Discover More</a>
-    </div>
-  </section>
+  <h1>Qualifying Round 1 U18 Boys Scores</h1>
+  <div id="scores"></div>
 
-  <section id="features">
-    <div class="container">
-      <h2>Features</h2>
-      <div class="feature">
-        <h3>Interactive Widgets</h3>
-        <p>Engage users with interactive elements powered by JavaScript.</p>
-      </div>
-      <div class="feature">
-        <h3>Responsive Design</h3>
-        <p>Ensure your site looks great on all devices.</p>
-      </div>
-      <div class="feature">
-        <h3>Modern CSS</h3>
-        <p>Utilize CSS features like Flexbox and Grid for layout.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <!-- Images and captions here -->
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 High-Tech Website. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <script>
+    fetch('/data')
+      .then(response => response.json())
+      .then(data => {
+        const scoresDiv = document.getElementById('scores');
+        data.forEach(item => {
+          const p = document.createElement('p');
+          p.textContent = item;
+          scoresDiv.appendChild(p);
+        });
+      });
+  </script>
 </body>
 </html>
