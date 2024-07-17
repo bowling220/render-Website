@@ -6,18 +6,40 @@
     <title>Bowling Scores</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
         }
         #navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
         .button {
             margin: 5px;
-            padding: 10px;
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
         }
         .button:hover {
             background-color: #45a049;
@@ -27,9 +49,18 @@
             height: 80vh;
             border: none;
         }
+        @media (max-width: 600px) {
+            .button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Bowling Scores</h1>
+    </header>
     <div id="navbar">
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Boys.pdf?v=new')">U18 Boys Day 1</button>
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Boys.pdf?v=new')">U18 Boys Day 2</button>
@@ -38,7 +69,6 @@
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Girls.pdf?v=new')">U18 Girls Day 2</button>
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Girls.pdf?v=new')">U18 Girls Day 3</button>
         <button class="button" onclick="loadIframe('https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results')">All Rounds and Ages</button>
-
     </div>
     <iframe id="iframeContainer" src="https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results"></iframe>
 
