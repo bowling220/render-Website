@@ -44,17 +44,27 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             background-color: #f9f9f9;
+            transition: transform 0.3s ease;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
         }
         .grid-item h2 {
             color: #333;
             font-size: 24px;
             margin-bottom: 10px;
+            cursor: pointer;
         }
         .grid-item p {
             color: #666;
             font-size: 16px;
             line-height: 1.6;
-            margin-bottom: 20px;
+            max-height: 80px; /* Limit height to 80px */
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .grid-item.open p {
+            max-height: 500px; /* Expand to show full content */
         }
         .grid-item img {
             max-width: 100%;
@@ -97,7 +107,7 @@
 
         <div class="grid">
             <div class="grid-item">
-                <img src="https://via.placeholder.com/400x300" alt="Stickers">
+                <img src="https://i.pinimg.com/736x/33/40/c0/3340c08f1eac79ffee9e8572c872dd26.jpg" alt="Stickers">
                 <h2>You Missed Stickers</h2>
                 <p>✅100% Weatherproof ✅ 3 Pack - 3 Inches Wide
                     ✅Made from self adhesive vinyl
@@ -108,7 +118,7 @@
             </div>
             
             <div class="grid-item">
-                <img src="https://via.placeholder.com/400x300" alt="Smart TV">
+                <img src="https://i.pinimg.com/736x/e0/0d/e3/e00de3e8d5d543a43b5c73983f69f14b.jpg" alt="Smart TV">
                 <h2>Hisense 55-Inch Class U7 Series Mini-LED ULED 4K UHD Google Smart TV (55U7N, 2024 Model) - QLED</h2>
                 <p>Description of the product or service. Highlight its benefits and features. Sed euismod tellus id ligula elementum, sed interdum ex faucibus.</p>
                 <a href="https://amzn.to/4aHcO5z" class="affiliate-link" target="_blank" rel="noopener noreferrer">Learn More</a>
@@ -121,5 +131,16 @@
             <p>Contact: olerblaine@gmail.com | Phone: +1(814)897-6002</p>
         </footer>
     </div>
+
+    <script>
+        // JavaScript to toggle description visibility on click
+        const gridItems = document.querySelectorAll('.grid-item');
+
+        gridItems.forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 </html>
