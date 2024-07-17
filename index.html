@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bowling Scores</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Data</title>
 </head>
 <body>
-  <h1>Qualifying Round 1 U18 Boys Scores</h1>
-  <div id="scores"></div>
-
-  <script>
-    fetch('/data')
-      .then(response => response.json())
-      .then(data => {
-        const scoresDiv = document.getElementById('scores');
-        data.forEach(item => {
-          const p = document.createElement('p');
-          p.textContent = item;
-          scoresDiv.appendChild(p);
-        });
-      });
-  </script>
+    <div id="content"></div>
+    <script>
+        fetch('/scrape')
+            .then(response => response.json())
+            .then(data => {
+                const contentDiv = document.getElementById('content');
+                data.forEach(item => {
+                    const p = document.createElement('p');
+                    p.textContent = item;
+                    contentDiv.appendChild(p);
+                });
+            });
+    </script>
 </body>
 </html>
