@@ -45,25 +45,14 @@
             background-color: #45a049;
         }
         #iframeContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            overflow: auto;
-            padding: 10px;
-        }
-        iframe {
             width: 100%;
-            height: 100%;
+            height: 80vh;
             border: none;
         }
         @media (max-width: 600px) {
             .button {
                 width: 100%;
                 margin: 5px 0;
-            }
-            #iframeContainer {
-                height: 60vh;
             }
         }
     </style>
@@ -81,13 +70,11 @@
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Girls.pdf?v=new')">U18 Girls Day 3</button>
         <button class="button" onclick="loadIframe('https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results')">All Rounds and Ages</button>
     </div>
-    <div id="iframeContainer">
-        <iframe id="iframeContainer" src="https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results"></iframe>
-    </div>
+    <iframe id="iframeContainer" src="https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results"></iframe>
 
     <script>
         function loadIframe(url) {
-            document.getElementById('pdfViewer').src = url;
+            document.getElementById('iframeContainer').src = url;
         }
     </script>
 </body>
