@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Affiliate Marketing Website</title>
+    <title>Affiliate Marketing Website</title>
     <style>
         /* Reset default browser styles */
         body, html {
@@ -34,23 +34,34 @@
             font-size: 18px;
             margin-bottom: 0;
         }
-        section {
-            margin-bottom: 40px;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .grid-item {
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 8px;
             background-color: #f9f9f9;
         }
-        section h2 {
+        .grid-item h2 {
             color: #333;
             font-size: 24px;
             margin-bottom: 10px;
         }
-        section p {
+        .grid-item p {
             color: #666;
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 20px;
+        }
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
         .affiliate-link {
             display: inline-block;
@@ -80,27 +91,31 @@
 <body>
     <div class="container">
         <header>
-            <h1>Your Affiliate Marketing Website</h1>
+            <h1>Affiliate Marketing Website</h1>
             <p>Welcome to your one-page affiliate marketing site. Start promoting products or services here!</p>
         </header>
 
-        <section>
-            <h2>You Missed Stickers</h2>
-            <p>✅100% Weatherproof ✅ 3 Pack - 3 Inches Wide
-                ✅Made from self adhesive vinyl
-                ✅Customer Service Guarantee: We respect every customer's experience and work hard to ensure your purchases are satisfied. If you have any problems with your order or defective products, contact us promptly, and we'll resolve them immediately.
-                ✅Personal Decoration: Stickers perfect for Water Bottle, Cup, Laptop, Guitar, Car, Motorcycle, Bike, Skateboard, Luggage Box, Computer, Laptop, Phone... Awesome use to decorate your favorite items, express your own personality. Aesthetic Stickers. Just click "Customize Now" button then you can select sizes, packs/quantity, custom any name or any text you love to.
-                ✅Long-lasting Waterproof: Our waterproof sticker is designed to last for years, ensuring your message or design.</p>
-            <a href="https://www.pinterest.com/pin/787778159850118917/" class="affiliate-link" target="_blank" rel="noopener noreferrer">BUY!</a>
-        </section>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x300" alt="Stickers">
+                <h2>You Missed Stickers</h2>
+                <p>✅100% Weatherproof ✅ 3 Pack - 3 Inches Wide
+                    ✅Made from self adhesive vinyl
+                    ✅Customer Service Guarantee: We respect every customer's experience and work hard to ensure your purchases are satisfied. If you have any problems with your order or defective products, contact us promptly, and we'll resolve them immediately.
+                    ✅Personal Decoration: Stickers perfect for Water Bottle, Cup, Laptop, Guitar, Car, Motorcycle, Bike, Skateboard, Luggage Box, Computer, Laptop, Phone... Awesome use to decorate your favorite items, express your own personality. Aesthetic Stickers. Just click "Customize Now" button then you can select sizes, packs/quantity, custom any name or any text you love to.
+                    ✅Long-lasting Waterproof: Our waterproof sticker is designed to last for years, ensuring your message or design.</p>
+                <a href="https://www.pinterest.com/pin/787778159850118917/" class="affiliate-link" target="_blank" rel="noopener noreferrer">BUY!</a>
+            </div>
+            
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/400x300" alt="Smart TV">
+                <h2>Hisense 55-Inch Class U7 Series Mini-LED ULED 4K UHD Google Smart TV (55U7N, 2024 Model) - QLED</h2>
+                <p>Description of the product or service. Highlight its benefits and features. Sed euismod tellus id ligula elementum, sed interdum ex faucibus.</p>
+                <a href="https://amzn.to/4aHcO5z" class="affiliate-link" target="_blank" rel="noopener noreferrer">Learn More</a>
+            </div>
 
-        <section>
-            <h2>Hisense 55-Inch Class U7 Series Mini-LED ULED 4K UHD Google Smart TV (55U7N, 2024 Model) - QLED</h2>
-            <p>Description of the product or service. Highlight its benefits and features. Sed euismod tellus id ligula elementum, sed interdum ex faucibus.</p>
-            <a href="https://amzn.to/4aHcO5z" class="affiliate-link" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </section>
-
-        <!-- Add more sections as needed for other affiliate products -->
+            <!-- Add more grid items as needed for other affiliate products -->
+        </div>
 
         <footer>
             <p>Contact: olerblaine@gmail.com | Phone: +1(814)897-6002</p>
