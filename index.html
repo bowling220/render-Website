@@ -49,6 +49,24 @@
             height: 80vh;
             border: none;
         }
+        #mobileMenu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #mobileMenu .button {
+            width: calc(100% - 10px);
+            margin: 5px 5px;
+            font-size: 14px;
+            padding: 8px 10px;
+        }
+        #hamburgerMenu {
+            display: none;
+            padding: 10px;
+            cursor: pointer;
+        }
         @media (max-width: 600px) {
             header {
                 padding: 5px 0;
@@ -57,14 +75,10 @@
                 font-size: 20px;
             }
             #navbar {
-                padding: 5px;
-                margin-bottom: 10px;
+                display: none;
             }
-            .button {
-                width: calc(100% - 10px);
-                margin: 5px 5px;
-                font-size: 14px;
-                padding: 8px 10px;
+            #hamburgerMenu {
+                display: block;
             }
             #iframeContainer {
                 height: 70vh;
@@ -75,8 +89,18 @@
 <body>
     <header>
         <h1>Bowling Scores</h1>
+        <div id="hamburgerMenu" onclick="toggleMenu()">☰ Menu</div>
     </header>
     <div id="navbar">
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Boys.pdf?v=new')">U18 Boys Day 1</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Boys.pdf?v=new')">U18 Boys Day 2</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Boys.pdf?v=new')">U18 Boys Day 3</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Girls.pdf?v=new')">U18 Girls Day 1</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Girls.pdf?v=new')">U18 Girls Day 2</button>
+        <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Girls.pdf?v=new')">U18 Girls Day 3</button>
+        <button class="button" onclick="loadIframe('https://bowl.com/youth/youth-tournaments/junior-gold-championships/2024-results')">All Rounds and Ages</button>
+    </div>
+    <div id="mobileMenu">
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%201_U18Boys.pdf?v=new')">U18 Boys Day 1</button>
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%202_U18Boys.pdf?v=new')">U18 Boys Day 2</button>
         <button class="button" onclick="loadIframe('https://scores.bowl.com/2024-JG/Qualifying_Round%203_U18Boys.pdf?v=new')">U18 Boys Day 3</button>
@@ -90,6 +114,14 @@
     <script>
         function loadIframe(url) {
             document.getElementById('iframeContainer').src = url;
+        }
+        function toggleMenu() {
+            var menu = document.getElementById('mobileMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
         }
     </script>
 </body>
