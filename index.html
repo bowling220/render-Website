@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affiliate Marketing Website</title>
-    <link rel="icon" href="icon.jpeg" type="image/jpeg"> <!-- Add this line for the favicon -->
+    <link rel="icon" href="icon.jpeg" type="image/jpeg">
     <style>
         /* Reset default browser styles */
         body, html {
@@ -24,11 +24,10 @@
         header {
             text-align: center;
             margin-bottom: 30px;
-            position: relative;
         }
         header img {
-            width: 50px; /* Adjust the size of the icon here */
-            height: 50px; /* Adjust the size of the icon here */
+            width: 50px;
+            height: 50px;
             vertical-align: middle;
             margin-right: 10px;
         }
@@ -69,16 +68,16 @@
             color: #666;
             font-size: 16px;
             line-height: 1.6;
-            max-height: 80px; /* Limit height to 80px */
+            max-height: 80px;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
         .grid-item.open p {
-            max-height: 500px; /* Expand to show full content */
+            max-height: 500px;
         }
         .grid-item img {
             max-width: 100%;
-            max-height: 200px; /* Adjust this value to set a uniform height for all images */
+            max-height: 200px;
             width: auto;
             height: auto;
             display: block;
@@ -107,6 +106,12 @@
         footer p {
             color: #666;
             font-size: 14px;
+        }
+        .read-more {
+            color: #007bff;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -140,11 +145,14 @@
                     <img src="${item.image}" alt="${item.title}">
                     <h2>${item.title}</h2>
                     <p>${item.description}</p>
+                    <span class="read-more">Read More</span>
                     <a href="${item.link}" class="affiliate-link" target="_blank" rel="noopener noreferrer">${item.linkText}</a>
                 `;
 
-                gridItem.querySelector('h2').addEventListener('click', function() {
+                const readMore = gridItem.querySelector('.read-more');
+                readMore.addEventListener('click', function() {
                     gridItem.classList.toggle('open');
+                    readMore.textContent = gridItem.classList.contains('open') ? 'Read Less' : 'Read More';
                 });
 
                 grid.appendChild(gridItem);
