@@ -14,9 +14,16 @@
             background: linear-gradient(135deg, #ff9900, #146eb4, #000000, #232f3e, #f2f2f2);
         }
 
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 20px;
             padding: 20px;
             backdrop-filter: blur(10px); /* Blurred effect */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -128,12 +135,6 @@
             margin-top: 10px;
         }
 
-        .ads-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
         .ad {
             flex: 0 0 auto;
             margin: 20px;
@@ -147,11 +148,21 @@
         <p>Welcome to your one-page affiliate marketing site. Buy Some Of Amazons Most Trending!</p>
         <a href="https://shareasale.com/r.cfm?b=1272552&u=4345759&m=76847&urllink=&afftrack=">NFL Tickets</a>
     </header>
-    <div class="ads-container">
+    <div class="main-content">
         <div class="ad">
             <div class="shrsl_ShareASale_productShowCaseTarget_53207"></div>
             <script type="text/javascript" src="https://showcase.shareasale.com/shareASale_liveWidget_loader.js?dt=07182024131712"></script>
             <script type="text/javascript">shrsl_ShareASale_liveWid_Init(53207, 4345759, 'shrsl_ShareASale_liveWid_wideSkyScraper_populate');</script>
+        </div>
+
+        <div class="container">
+            <div class="grid" id="grid"></div>
+
+            <footer>
+                <p>Contact: olerblaine@gmail.com | Phone: +1(814)897-6002</p>
+                <p>&copy; 2024 Affiliate Links™ | All rights reserved.</p>
+                <p>Affiliate Links™ Website is not affiliated with <img src="icon2.svg" alt="Icon 2">mazon™</p>
+            </footer>
         </div>
 
         <div class="ad">
@@ -159,18 +170,6 @@
             <script type="text/javascript" src="https://showcase.shareasale.com/shareASale_liveWidget_loader.js?dt=07182024132404"></script>
             <script type="text/javascript">shrsl_ShareASale_liveWid_Init(53209, 4345759, 'shrsl_ShareASale_liveWid_wideSkyScraper_populate');</script>
         </div>
-    </div>
-
-    <div class="container">
-
-
-        <div class="grid" id="grid"></div>
-
-        <footer>
-            <p>Contact: olerblaine@gmail.com | Phone: +1(814)897-6002</p>
-            <p>&copy; 2024 Affiliate Links™ | All rights reserved.</p>
-            <p>Affiliate Links™ Website is not affiliated with <img src="icon2.svg" alt="Icon 2">mazon™</p>
-        </footer>
     </div>
 
     <script>
