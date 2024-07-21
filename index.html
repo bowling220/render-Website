@@ -15,6 +15,45 @@
             background: linear-gradient(135deg, #ff9900, #146eb4, #000000, #232f3e, #f2f2f2);
         }
 
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #232f3e;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #ff9900;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
+
         .main-content {
             display: flex;
             justify-content: center;
@@ -135,41 +174,36 @@
             font-weight: bold;
             margin-top: 10px;
         }
-
-        .ad {
-            flex: 0 0 auto;
-            margin: 20px;
-        }
-
-        .ad-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
     </style>    
 </head>
 <body>
+    <div class="navbar">
+        <div>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="facebook.png" alt="Facebook"> Facebook
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="x.webp" alt="X"> X
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="Instagram.png" alt="Instagram"> Instagram
+            </a>
+        </div>
+    </div>
+
     <header>
         <img src="icon.jpeg" alt="Icon">
         <h1>Affiliate Marketing Website</h1>
-        <p>Welcome to your one-page affiliate marketing site. Buy Some Of Amazons Most Trending!</p>Join <a href="https://shareasale.com/r.cfm?b=70&u=4345759&m=47&urllink=&afftrack=">shareasale.com</a>, Earn Cash!
-        <div class="ad-container">
-            <div class="shrsl_ShareASale_productShowCaseTarget_53211"></div>
-            <script type="text/javascript" src="https://showcase.shareasale.com/shareASale_liveWidget_loader.js?dt=07182024235214"></script>
-            <script type="text/javascript">
-                shrsl_ShareASale_liveWid_Init(53211, 4345759, 'shrsl_ShareASale_liveWid_leaderBoard_populate');
-            </script>
-        </div>  
-    
+        <p>Welcome to your one-page affiliate marketing site. Buy Some Of Amazons Most Trending!</p>
     </header>
-    <div class="main-content">
-        <div class="ad">
-            <div class="shrsl_ShareASale_productShowCaseTarget_53207"></div>
-            <script type="text/javascript" src="https://showcase.shareasale.com/shareASale_liveWidget_loader.js?dt=07182024131712"></script>
-            <script type="text/javascript">shrsl_ShareASale_liveWid_Init(53207, 4345759, 'shrsl_ShareASale_liveWid_wideSkyScraper_populate');</script>
-        </div>
 
+    <div class="main-content">
         <div class="container">
             <div class="grid" id="grid"></div>
 
@@ -178,12 +212,6 @@
                 <p>&copy; 2024 Affiliate Links™ | All rights reserved.</p>
                 <p>Affiliate Links™ Website is not affiliated with <img src="icon2.svg" alt="Icon 2">mazon™</p>
             </footer>
-        </div>
-
-        <div class="ad">
-            <div class="shrsl_ShareASale_productShowCaseTarget_53209"></div>
-            <script type="text/javascript" src="https://showcase.shareasale.com/shareASale_liveWidget_loader.js?dt=07182024132404"></script>
-            <script type="text/javascript">shrsl_ShareASale_liveWid_Init(53209, 4345759, 'shrsl_ShareASale_liveWid_wideSkyScraper_populate');</script>
         </div>
     </div>
 
